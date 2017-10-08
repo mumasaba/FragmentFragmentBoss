@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FragmentFragmentBoss</string>
+    <string name="add_word">Add</string>
+    <string name="slave_dialog_title">New Word</string>
+</resources>
