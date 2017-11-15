@@ -12,6 +12,7 @@ import android.support.v4.app.DialogFragment;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by b3nn on 7/25/17.
@@ -34,7 +35,12 @@ public class SlaveFragmentFragment extends DialogFragment {
                     @Override
                     public void onClick( DialogInterface dialogInterface, int i ) {
                         String input = mNewWordField.getText().toString().trim();
-                        sendResult( Activity.RESULT_OK, input );
+
+                        if ( input.length() != 0 ) {
+                            sendResult( Activity.RESULT_OK, input );
+                        } else {
+                            Toast.makeText( getActivity(), "New Word is empty, please insert a word.", Toast.LENGTH_SHORT ).show();
+                        }
                     }
                 } ).setNegativeButton( android.R.string.cancel, null ).create();
 
